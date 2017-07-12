@@ -56,6 +56,7 @@ fn compile() {
     let r = gcc::windows_registry::find(target.as_str(),"msbuild.exe")
         .expect("could not find msbuild")
         .args(&["win\\libsass.sln", "/p:LIBSASS_STATIC_LIB=1", "/p:Configuration=Release",
+            "/p:WholeProgramOptimization=false",
             format!("/p:Platform={}", msvc_platform).as_str()])
         .current_dir(&src)
         .output()
