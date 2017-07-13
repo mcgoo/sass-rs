@@ -11,7 +11,6 @@ use bindings::ptr::Unique;
 use options::{OutputStyle, Options};
 use bindings::SassOptions;
 
-
 pub struct SassContext {
     // Need Unique to send between threads, libsass is thread safe
     pub raw: Unique<sass_sys::Sass_Context>,
